@@ -5,15 +5,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 //require database
-require('./db/db')
-
+require('./db/db');
+//add controllers here
+const singersController = require('./controller/singers');
+const songsController = require('./controller/songs');
 /////middleware here
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 /////////////////////
 
 //require controllers//////
-app.use('/singers', singersController);
+app.use('/singers', singersController); //err forgot to const the controller
 app.use('/songs', songsController);
 //need song and singers file in controller!
 ///////////////////////////

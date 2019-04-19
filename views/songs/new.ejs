@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Add Song Lyrics</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href = "/">Home</a>
+                        </li>
+                        <li>
+                            <a href = "/songs"> Songs Index</a>
+                        </li>
+                    </ul>
+                </nav>
+        </header>
+            <main>
+                <form action = "/songs" method = "POST">
+                <select name = "singerId">
+                    <%for(let i = 0; i < singers.length; i++) {%>
+                        <option value = "<%=singers[i]._id%>"><%=singers[i].name%></option>
+                      <%}%>  
+                </select><br/>
+                <input type = "text" name = "title" placeholder = "title"/><br/>
+                    <textarea name = "lyrics" placeholder ="lyrics"><textarea><br/>
+                <input type = "submit" value = "Publish Lyrics"/>
+                </form>
+            </main>
+    
+    </body>
+</html>
