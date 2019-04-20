@@ -13,9 +13,9 @@ router.get('/new', (req,res) => {
 //show route!!! before index bc /:id
 router.get('/:id', (req,res) => {
     Singer.findById(req.params.id)
-    //.populate('songs')
+    .populate('songs')
     .exec((err, foundSinger) => {
-       // console.log(foundSinger, "<------foundSinger in show route")
+       console.log(foundSinger, "<------foundSinger in show route")
         res.render('singers/show.ejs', {
             singer:foundSinger
         });
