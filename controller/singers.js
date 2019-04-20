@@ -21,6 +21,24 @@ router.get('/:id', (req,res) => {
         });
     });
 });
+//delete route!!!!
+router.delete('/:id', (req,res) => {
+    Singer.findByIdAndRemove(req.params.id, (err,deletedSinger) => {
+        //delete songs from the singer via song model
+        if(err){
+        }else{
+            console.log(deletedSinger, "<----deletedSinger ");
+            Singer.deleteMany({
+                _id:{
+                    $in: deletedSinger.songs //creates array of song id thats able to delete
+                }
+            },(err, data) => {
+                console.log(data, 'after removing')
+                res.redirect('/singers');
+            });
+        }
+    });
+});
 //index route
 router.get('/', (req, res) => {
     //show all singers
