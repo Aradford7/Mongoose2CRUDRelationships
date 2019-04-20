@@ -28,5 +28,36 @@ router.get('/', (req, res) =>{
         }
     });
 });
+//post the new song
+router.post('/', (req,res) => {
+    Song.create(req.body, (err, createdSong) => {
+        if(err, 'song not created'){
+            res.send(err);
+        }else{
+            /////crazy stuff happening
+            // finding the author that owns the article
+            // req.body.authorId What is is coming from look at the new route, at the select menu
+            // what is the name property
+           Singer.findById(req.body.singerId, (err, foundSinger) => {
+               console.log("==========================")
+               console.log(foundSinger, "<======== found singer in songPost");
+               console.log("==========================")
+            //////more crazy stuff
+            // after finding the author push the reference into the singers songs array
+            //An array is defined in the model
+            foundSinger.songs.push(createdSong);
+            foundSinger.save((err, savedSinger) => {
+                console.log('======================')
+                console.log(savedSinger, '<-----savedSinger in the songs post route')
+                console.log('========================')
+                res.redirect('/songs');
+            });
+         });
+        }
+    });
+});
+//songs show route
+
+
 //export
 module.exports = router;
