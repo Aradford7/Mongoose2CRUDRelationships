@@ -9,4 +9,5 @@ const singerSchema =  new mongoose.Schema({
 const Singer = mongoose.model('Singer', singerSchema);
 //make model into Object for Singer
 //export
-module.export = Singer;
+
+module.exports = Singer;

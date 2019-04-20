@@ -4,6 +4,8 @@ const app = express();
 //method-override, mongoose and ejs
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const ejsLint = require('ejs-lint'); //ejs lint CUZ IM SICK OF TYPOS :(
+
 //require database
 require('./db/db');
 //add controllers here
@@ -12,6 +14,7 @@ const songsController = require('./controller/songs');
 /////middleware here
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
+ejsLint.lint()
 /////////////////////
 
 //require controllers//////

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Singers Index Page</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href = "/songs">Song List</a>
+                    </li>
+                    <li>
+                        <a href = "/singers/new"> Add New Singer</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+            <main>
+                <h1>All Singers</h1>
+                    <ul>
+                        <%for(let i = 0; i < singers.length; i++) {%>
+                            <li>
+                                <a href = "/singers/<%=singers[i]._id%>">
+                                <%= singers[i].name%></a>
+                            </li>
+                        <%}%>
+                    </ul>
+            </main>
+    </body>
+</html>
