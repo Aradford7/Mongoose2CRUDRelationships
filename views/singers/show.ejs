@@ -29,7 +29,7 @@
              <a href="/singers/<%=singer._id%>/edit">Edit</a>
       </section>
       <section>
-            <h2>songs Written By This singer</h2>
+            <h2>Songs List</h2>
             <ul>
                 <% for (let i = 0; i < singer.songs.length; i++) {%>
                     <li><a href="/songs/<%=singer.songs[i]._id%>"><%=singer.songs[i].title%></a></li>

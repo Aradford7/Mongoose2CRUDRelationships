@@ -47,5 +47,25 @@ router.post('/', (req, res) => {
     });
 });
 
+//EDIT GET AND PUT REQUEST
+router.get('/:id/edit', (req,res) => {
+    Singer.findById(req.params.id, (err, foundSinger) => {
+        res.render('singers/edit.ejs', {
+            singer: foundSinger
+        });
+    });
+});
+
+router.put('/:id', (req,res) => {
+    Singer.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedSinger) => {
+        if (err){
+            res.send(err, 'Singer Edit not updated');
+        }else {
+            res.redirect('/singers');
+        }
+    });
+});
+
+
 //module.exports
 module.exports = router;
