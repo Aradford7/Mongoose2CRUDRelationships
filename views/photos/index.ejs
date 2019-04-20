@@ -6,24 +6,24 @@
   </head>
   <body>
     <header>
-      <h1>Songs</h1>
+      <h1>Photos</h1>
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a> <a href = "/singers">Singers</a>
+            <a href="/">Home</a> <a href = "/users">Users</a>
           </li>
           <li>
-            <a href="/songs/new">List a New Song</a>
+            <a href="/photos/new">Post a New Photo</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <h2>List of Songs</h2>
+      <h2>Photo List</h2>
       <ul>
-        <% for(let i = 0; i < songs.length; i++){ %>
+        <% for(let i = 0; i < photos.length; i++){ %>
           <li>
-            <a href="/songs/<%=songs[i]._id%>"><%=songs[i].title%></a>
+            <a href="/photos/<%=photos[i]._id%>"><%=photos[i].title%></a>
           </li>
         <% } %>
       </ul>

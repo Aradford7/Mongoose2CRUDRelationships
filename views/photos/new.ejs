@@ -8,28 +8,28 @@
     </head>
     <body>
         <header>
-            <h1>Add a New Song</h1>
+            <h1>Add a New Photo</h1>
                 <nav>
                     <ul>
                         <li>
                             <a href = "/">Home</a>
                         </li>
                         <li>
-                            <a href = "/songs"> Songs Index</a>
+                            <a href = "/photos">Photo Gallery</a>
                         </li>
                     </ul>
                 </nav>
         </header>
             <main>
-                <form action = "/songs" method = "POST">
-                <select name = "singerId">
-                    <%for(let i = 0; i < singers.length; i++) {%>
-                        <option value = "<%=singers[i]._id%>"><%=singers[i].name%></option>
+                <form action = "/photos" method = "POST">
+                <select name = "userId">
+                    <%for(let i = 0; i < users.length; i++) {%>
+                        <option value = "<%=users[i]._id%>"><%=users[i].name%></option>
                       <%}%>  
                 </select><br/>
                 <input type = "text" name = "title" placeholder = "title"/><br/>
-                    <textarea name = "lyrics" placeholder ="lyrics"></textarea><br/>
-                            <input type = "submit" value = "Publish Lyrics"/>
+                    <textarea name = "img" placeholder ="photo url here"></textarea><br/>
+                            <input type = "submit" value = "Publish Photo"/>
                             
                 </form>
                 

@@ -4,13 +4,13 @@ const app = express();
 //method-override, mongoose and ejs
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const ejsLint = require('ejs-lint'); //ejs lint CUZ IM SICK OF TYPOS :(
+const ejsLint = require('ejs-lint'); 
 
 //require database
 require('./db/db');
 //add controllers here
-const singersController = require('./controller/singers');
-const songsController = require('./controller/songs');
+const usersController = require('./controller/users');
+const photosController = require('./controller/photos');
 /////middleware here
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
@@ -18,9 +18,9 @@ ejsLint.lint()
 /////////////////////
 
 //require controllers//////
-app.use('/singers', singersController); //err forgot to const the controller
-app.use('/songs', songsController);
-//need song and singers file in controller!
+app.use('/users', usersController); 
+app.use('/photos', photosController);
+//need photo and users file in controller!
 ///////////////////////////
 
 app.listen(3000, () => {

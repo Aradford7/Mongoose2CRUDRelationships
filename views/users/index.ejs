@@ -8,25 +8,25 @@
     </head>
     <body>
         <header>
-            <h1>Singers Index Page</h1>
+            <h1>Users Index Page</h1>
             <nav>
                 <ul>
                     <li>
-                        <a href = "/songs">Song List</a>
+                        <a href = "/photos">Photo Gallery</a>
                     </li>
                     <li>
-                        <a href = "/singers/new"> Add New Singer</a>
+                        <a href = "/users/new"> Add New User</a>
                     </li>
                 </ul>
             </nav>
         </header>
             <main>
-                <h1>All Singers</h1>
+                <h1>All Users</h1>
                     <ul>
-                        <%for(let i = 0; i < singers.length; i++) {%>
+                        <%for(let i = 0; i < users.length; i++) {%>
                             <li>
-                                <a href = "/singers/<%=singers[i]._id%>">
-                                <%= singers[i].name%></a>
+                                <a href = "/users/<%=users[i]._id%>">
+                                <%= users[i].name%></a>
                             </li>
                         <%}%>
                     </ul>

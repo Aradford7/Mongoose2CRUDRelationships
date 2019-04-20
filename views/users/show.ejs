@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1><%=user.name%>'s Profile</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/users">All Users Index</a>
+                </li>
+            </ul>
+      </nav>
+    </header>
+    <main>
+        <section>
+            <h2>User Info:</h2>
+                <ul>
+                    <li>Name: <%=user.name%></li>
+                </ul>
+      </section>
+      <section>
+             <a href="/users/<%=user._id%>/edit">Edit</a>
+      </section>
+      <section>
+            <h2>Photos List</h2>
+            <ul>
+                <% for (let i = 0; i < user.photos.length; i++) {%>
+                    <li><a href="/photos/<%=user.photos[i]._id%>"><%=user.photos[i].title%></a></li>
+            <% } %>
+            </ul>
+      </section>
+
+      
+    </main>
+  </body>
+</html>

@@ -6,29 +6,29 @@
   </head>
   <body>
     <header>
-      <h1><%=song.title%></h1>
-      <small>by: <a href="/singers/<%=singer._id%>"><%=singer.name%></a> </small>
+      <h1><%=photo.title%></h1>
+      <small>by: <a href="/users/<%=user._id%>"><%=user.name%></a> </small>
       <nav>
         <ul>
           <li>
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/songs">Songs Index</a>
+            <a href="/photos">Photo Gallery</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
       <section>
-          <a href="/songs/<%=song._id%>/edit">Edit</a>
+          <a href="/photos/<%=photo._id%>/edit">Edit</a>
       </section>
       <section>
-        <%=song.lyrics%>
+        <img src = "<%=photo.img%>">
       </section>
       <section>
-          <form action="/songs/<%=song._id%>?_method=DELETE" method="post">
-              <input type="submit" value="Delete song"/>
+          <form action="/photos/<%=photo._id%>?_method=DELETE" method="post">
+              <input type="submit" value="Delete Photo"/>
           </form>
       </section>
     </main>
